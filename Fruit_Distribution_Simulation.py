@@ -95,12 +95,13 @@ def simulate_fruit_distribution(input_csv, output_csv, num_simulations=1000000):
         ax.set_zlabel('Frequency')
         ax.set_title('3D Histogram of Equatorial Diameter vs Elongation')
         plt.show()
+        return output_csv
         
     except Exception as e:
         print(f"Not good enough buddy!: {e}")
 
 
-def monte_carlo_analysis(input_csv, num_simulations=10):
+def monte_carlo_analysis(input_csv, num_simulations=1000):
     """
     Perform Monte Carlo analysis on the segmented simulation data.
 
@@ -148,6 +149,8 @@ def monte_carlo_analysis(input_csv, num_simulations=10):
         print(f"Try again bitch: {e}")
         return None
     
+    
+    
 simulate_fruit_distribution('MeanSizeSummaries.csv', 'output_simulation2.csv')
-monte_carlo_results = monte_carlo_analysis('output_simulation2.csv')
-print(monte_carlo_results)
+#monte_carlo_results = monte_carlo_analysis('output_simulation2.csv')
+#print(monte_carlo_results)
